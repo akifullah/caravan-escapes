@@ -54,17 +54,17 @@ function timeline() {
 
 /* ---------- layouts ---------- */
 const hubLinks = (on) => `<div class="demobar"><b>🎬 CLIENT DEMO</b>
-<a href="home.html" class="${on === 'pub' ? 'on' : ''}">Customer website</a>
+<a href="index.html" class="${on === 'pub' ? 'on' : ''}">Customer website</a>
 <a href="owner-dashboard.html" class="${on === 'owner' ? 'on' : ''}">Owner portal</a><a href="admin-dashboard.html" class="${on === 'admin' ? 'on' : ''}">Admin panel</a>
-<span class="sp"></span><a href="index.html">☰ Demo hub / flow map</a></div>`;
+<span class="sp"></span><a href="demo.html">☰ Demo hub / flow map</a></div>`;
 
-const pubHead = (nav) => `<header class="pub-head"><div class="container"><a class="logo" href="home.html"><span>🚐</span>Caravan Escapes</a>
-<nav class="pub-nav"><a href="search.html" class="${nav === 'search.html' ? 'on' : ''}">Our caravans</a><a href="home.html#how">How it works</a><a href="home.html#contact">Contact</a></nav>
+const pubHead = (nav) => `<header class="pub-head"><div class="container"><a class="logo" href="index.html"><span>🚐</span>Caravan Escapes</a>
+<nav class="pub-nav"><a href="search.html" class="${nav === 'search.html' ? 'on' : ''}">Our caravans</a><a href="index.html#how">How it works</a><a href="index.html#contact">Contact</a></nav>
 <a class="btn btn-ghost btn-sm" href="login.html">Sign in</a><a class="btn btn-accent btn-sm" href="search.html">Book now</a></div></header>`;
 const pubFoot = `<footer class="pub-foot" id="contact"><div class="container"><div class="grid g4"><div><div class="logo" style="color:#fff"><span>🚐</span>Caravan Escapes</div><p class="small" style="margin-top:10px">Hand-picked holiday caravans on the Welsh coast. Book direct, pay securely.</p></div>
-<div><h4>Explore</h4><a href="search.html">All caravans</a><a href="home.html#how">How it works</a></div>
+<div><h4>Explore</h4><a href="search.html">All caravans</a><a href="index.html#how">How it works</a></div>
 <div><h4>Guests</h4><a href="search.html">Find a caravan</a><a href="#">Cancellation policy</a></div>
-<div><h4>Owners &amp; Staff</h4><a href="owner-dashboard.html">Owner portal</a><a href="admin-dashboard.html">Admin panel</a><a href="index.html">Demo hub</a></div></div>
+<div><h4>Owners &amp; Staff</h4><a href="owner-dashboard.html">Owner portal</a><a href="admin-dashboard.html">Admin panel</a><a href="demo.html">Demo hub</a></div></div>
 <div class="copy">© 2026 Caravan Escapes · 📞 01234 567 890 · hello@caravanescapes.example · Demo UI only</div></div></footer>`;
 
 const ADMIN_NAV = [
@@ -78,7 +78,7 @@ const OWNER_NAV = [
   ['My caravans', [['📊', 'Dashboard', 'owner-dashboard.html'], ['🗓️', 'Calendar', 'owner-calendar.html'], ['🔒', 'Block dates', 'owner-block.html'], ['📅', 'Bookings', 'owner-bookings.html']]],
 ];
 function sidebar(navDef, nav, role, who) {
-  let h = `<aside class="side"><a class="logo" href="home.html"><span>🚐</span>Caravan Escapes</a><div class="role">Signed in as<b>${who}</b>${role}</div>`;
+  let h = `<aside class="side"><a class="logo" href="index.html"><span>🚐</span>Caravan Escapes</a><div class="role">Signed in as<b>${who}</b>${role}</div>`;
   for (const [g, items] of navDef) {
     h += `<h6>${g}</h6>`;
     for (const [ic, l, href, c] of items) h += `<a href="${href}" class="${href === nav ? 'on' : ''}"><span>${ic}</span>${l}${c ? `<span class="cnt">${c}</span>` : ''}</a>`;
