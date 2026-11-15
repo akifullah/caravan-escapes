@@ -1,0 +1,15 @@
+<!--title:Payments|nav:admin-payments.html-->
+<div class="page-head"><div><h1>Payments</h1><p>Payment history and amounts still owed.</p></div><a class="btn btn-accent" href="#record">＋ Record payment</a></div>
+<div class="grid g3 mb"><div class="stat"><div class="lbl">Received this month</div><div class="val">£14,210</div></div><div class="stat"><div class="lbl">Deposits</div><div class="val">£5,480</div></div><div class="stat"><div class="lbl">Outstanding</div><div class="val">£8,420</div></div></div>
+<div class="tabs"><input type="radio" name="t" id="t1" checked><input type="radio" name="t" id="t2">
+<div class="tablist"><label for="t1">Payment history</label><label for="t2">Outstanding balances</label></div>
+<div class="panels">
+<div class="panel"><div class="card flat"><div class="tbl-wrap"><table><thead><tr><th>Date</th><th>Booking</th><th>Type</th><th>Method</th><th class="right">Amount</th></tr></thead><tbody>
+<tr><td>14 Nov</td><td><a href="admin-booking-view.html"><b>CE-20481</b></a></td><td>Deposit</td><td>Card (online)</td><td class="right">£156.00</td></tr>
+<tr><td>13 Nov</td><td><a href="admin-booking-view.html"><b>CE-20479</b></a></td><td>Full payment</td><td>Bank transfer (recorded)</td><td class="right">£840.00</td></tr>
+<tr><td>12 Nov</td><td><a href="admin-booking-view.html"><b>CE-20470</b></a></td><td>Refund</td><td>Card</td><td class="right">−£120.00</td></tr></tbody></table></div></div></div>
+<div class="panel"><div class="card flat"><div class="tbl-wrap"><table><thead><tr><th>Booking</th><th>Guest</th><th>Due date</th><th class="right">Amount</th><th></th></tr></thead><tbody>
+<tr><td><b>CE-20481</b></td><td>Emma Carter</td><td>15 Nov</td><td class="right">£364.00</td><td><a class="btn btn-sm" href="admin-emails.html">Send reminder</a></td></tr>
+<tr><td><b>CE-20462</b></td><td>Noah Reid</td><td><span class="badge b-bad">Overdue · 8 Nov</span></td><td class="right">£420.00</td><td><a class="btn btn-sm" href="admin-emails.html">Send reminder</a></td></tr></tbody></table></div></div></div>
+</div></div>
+<div class="modal" id="record"><div class="box"><a class="x" href="#">×</a><h3>Record a payment</h3><p class="muted small">For payments received by bank transfer or cash.</p><div class="fgrid mt"><div class="field full"><label>Booking</label><input type="text" value="CE-20481 · Emma Carter"></div><div class="field"><label>Amount (£)</label><input type="number" value="364"></div><div class="field"><label>Method</label><select><option>Bank transfer</option><option>Cash</option></select></div></div><div class="foot"><a class="btn btn-ghost" href="#">Cancel</a><a class="btn btn-ok" href="admin-payments.html">Save</a></div></div></div>
