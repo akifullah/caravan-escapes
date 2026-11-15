@@ -1,27 +1,28 @@
 <!--title:Demo guide|layout:auth-->
 <section class="hub-hero"><div class="container">
 <p class="small" style="opacity:.8;letter-spacing:.08em;text-transform:uppercase">Prototype · screens only · no live data</p>
-<h1 style="margin-top:10px">Caravan Booking &amp; Management System</h1>
-<p style="font-size:17px;max-width:640px;opacity:.9;margin-top:8px">A click-through preview of how the website and system will work for customers, caravan owners and administrators.</p>
+<h1 style="margin-top:10px">Caravan Booking &amp; Management Platform</h1>
+<p style="font-size:17px;max-width:700px;opacity:.9;margin-top:8px">Two operating models: properties managed by the platform, and properties managed by their owners — each with its own booking and payment flow.</p>
+<div class="row mt"><a class="btn btn-accent btn-lg" href="index.html">Open customer website</a><a class="btn btn-ghost btn-lg" href="to-confirm.html">Decisions to confirm</a></div>
 </div></section>
-
 <div class="container" style="padding:40px 20px 70px">
-<div class="grid g3">
-<div class="hub-card"><h2>1. Customer</h2><p class="muted small mt">Find a caravan, book it, pay a deposit, pay the balance later.</p>
-<div class="steps"><a href="index.html"><b>1</b>Home &amp; search</a><a href="search.html"><b>2</b>Available caravans</a><a href="caravan.html"><b>3</b>Caravan details &amp; calendar</a><a href="booking-details.html"><b>4</b>Guest details</a><a href="booking-payment.html"><b>5</b>Pay deposit</a><a href="booking-confirmed.html"><b>6</b>Confirmation email</a><a href="balance.html"><b>7</b>Pay remaining balance</a></div>
-<a class="btn btn-block mt" href="index.html">Start customer flow</a></div>
-
-<div class="hub-card"><h2>2. Caravan owner</h2><p class="muted small mt">Private login. See bookings, check the calendar, block personal-use dates.</p>
-<div class="steps"><a href="login.html"><b>1</b>Owner login</a><a href="owner-dashboard.html"><b>2</b>Dashboard</a><a href="owner-calendar.html"><b>3</b>Calendar</a><a href="owner-block.html"><b>4</b>Block my dates</a><a href="owner-bookings.html"><b>5</b>My bookings</a></div>
-<a class="btn btn-block mt" href="owner-dashboard.html">Open owner area</a></div>
-
-<div class="hub-card"><h2>3. Administrator</h2><p class="muted small mt">Run the whole business from one dashboard.</p>
-<div class="steps"><a href="admin-dashboard.html"><b>1</b>Dashboard</a><a href="admin-caravans.html"><b>2</b>Caravans</a><a href="admin-caravan-edit.html"><b>3</b>Add a caravan</a><a href="admin-bookings.html"><b>4</b>Bookings</a><a href="admin-booking-new.html"><b>5</b>Add phone / email booking</a><a href="admin-calendar.html"><b>6</b>Calendar &amp; blocks</a><a href="admin-payments.html"><b>7</b>Payments</a></div>
-<a class="btn btn-block mt" href="admin-dashboard.html">Open admin</a></div>
+<div class="grid g2">
+<div class="hub-card"><h2>1. Guest books a platform-managed property</h2><p class="muted small mt">Guest checkout, no account. Admin confirms, collects payment and sends reminders.</p>
+<div class="steps"><a href="index.html"><b>1</b>Home &amp; search</a><a href="search.html"><b>2</b>Results (managed-by badges)</a><a href="caravan.html"><b>3</b>Property page</a><a href="booking-details.html"><b>4</b>Guest details</a><a href="booking-received.html"><b>5</b>Booking received</a><a href="admin-booking-view.html"><b>6</b>Admin confirms &amp; sends payment link</a><a href="balance.html"><b>7</b>Guest pays via secure link</a></div></div>
+<div class="hub-card"><h2>2. Guest requests a self-managed property</h2><p class="muted small mt">Owner accepts or declines. Guest pays the owner directly.</p>
+<div class="steps"><a href="caravan-request.html"><b>1</b>Property page</a><a href="booking-request.html"><b>2</b>Send request</a><a href="request-sent.html"><b>3</b>Request sent</a><a href="owner-request-view.html"><b>4</b>Owner accepts / declines</a><a href="pay-request.html"><b>5</b>Owner’s payment details (bank / Stripe)</a><a href="account-booking.html"><b>6</b>Booking view (secure link)</a><a href="account.html"><b>7</b>Optional customer account</a></div></div>
+<div class="hub-card"><h2>3. New owner lists a holiday home</h2><p class="muted small mt">Proof of ownership → admin review → £99 fee → live.</p>
+<div class="steps"><a href="list-your-holiday-home.html"><b>1</b>List your holiday home</a><a href="owner-register.html"><b>2</b>Owner registration</a><a href="owner-caravan-new.html"><b>3</b>Submit property + proof of ownership</a><a href="admin-listing-review.html"><b>4</b>Admin approves / rejects / requests changes</a><a href="owner-caravans.html"><b>5</b>Owner sees status &amp; resubmits</a><a href="owner-listing-fee.html"><b>6</b>Owner pays £99</a><a href="admin-listings.html"><b>7</b>Admin tracks fee &amp; activation</a></div></div>
+<div class="hub-card"><h2>4. Admin manages payments</h2>
+<div class="steps"><a href="admin-dashboard.html"><b>1</b>Dashboard</a><a href="admin-bookings.html"><b>2</b>Bookings (platform &amp; self-managed)</a><a href="admin-payments.html"><b>3</b>Outstanding, overdue, manual reminder</a><a href="admin-emails.html"><b>4</b>Six-week reminder settings</a><a href="admin-requests.html"><b>5</b>Block requests from platform-managed owners</a><a href="admin-people.html"><b>6</b>Suspend owners / listings</a></div></div>
 </div>
 
+<div class="grid g3 mt2">
+<div class="hub-card"><h3>Platform-managed owner (Type A)</h3><p class="muted small mt">Read-only. No guest contact details. Requests blocks from admin.</p><div class="steps"><a href="pm-dashboard.html"><b>1</b>Dashboard</a><a href="pm-bookings.html"><b>2</b>Bookings (names, dates, cost)</a><a href="pm-calendar.html"><b>3</b>Calendar</a><a href="pm-request.html"><b>4</b>Request a block</a></div></div>
+<div class="hub-card"><h3>Self-managed owner (Type B)</h3><p class="muted small mt">Full control of bookings, dates and payments.</p><div class="steps"><a href="owner-dashboard.html"><b>1</b>Dashboard</a><a href="owner-requests.html"><b>2</b>Booking requests</a><a href="owner-bookings.html"><b>3</b>Bookings &amp; payments</a><a href="owner-calendar.html"><b>4</b>Calendar</a><a href="owner-block.html"><b>5</b>Block dates</a><a href="owner-payments.html"><b>6</b>Payment settings</a></div></div>
+<div class="hub-card"><h3>Three separate logins</h3><div class="steps"><a href="login.html"><b>C</b>Customer sign in (optional)</a><a href="owner-login.html"><b>O</b>Owner login</a><a href="admin-login.html"><b>A</b>Administrator · private, not on public site</a></div></div>
+</div>
 <h3 class="mt2 mb">All admin pages</h3>
-<div class="row" style="gap:8px">
-<a class="chip" href="admin-dashboard.html">Dashboard</a><a class="chip" href="admin-caravans.html">Caravans</a><a class="chip" href="admin-caravan-edit.html">Add / edit caravan</a><a class="chip" href="admin-people.html">Owners &amp; staff</a><a class="chip" href="admin-bookings.html">Bookings</a><a class="chip" href="admin-booking-new.html">New booking</a><a class="chip" href="admin-booking-view.html">Booking detail</a><a class="chip" href="admin-calendar.html">Calendar</a><a class="chip" href="admin-requests.html">Date-block requests</a><a class="chip" href="admin-ical.html">iCal sync</a><a class="chip" href="admin-pricing.html">Prices</a><a class="chip" href="admin-payments.html">Payments</a><a class="chip" href="admin-reports.html">Reports</a><a class="chip" href="admin-emails.html">Automatic emails</a></div>
+<div class="row" style="gap:8px"><a class="chip" href="admin-dashboard.html">Dashboard</a><a class="chip" href="admin-caravans.html">Properties</a><a class="chip" href="admin-caravan-edit.html">Add / edit property</a><a class="chip" href="admin-listings.html">Listing reviews &amp; fees</a><a class="chip" href="admin-bookings.html">Bookings</a><a class="chip" href="admin-booking-new.html">New booking</a><a class="chip" href="admin-booking-view-sm.html">Self-managed booking</a><a class="chip" href="admin-calendar.html">Calendars</a><a class="chip" href="admin-requests.html">Owner requests</a><a class="chip" href="admin-ical.html">iCal sync</a><a class="chip" href="admin-pricing.html">Prices</a><a class="chip" href="admin-payments.html">Payments &amp; reminders</a><a class="chip" href="admin-reports.html">Reports</a><a class="chip" href="admin-people.html">People</a><a class="chip" href="admin-cms.html">Content &amp; settings</a><a class="chip" href="admin-emails.html">Emails</a></div>
 <p class="muted small mt2">Images are placeholders and all names and figures are fictional.</p>
 </div>

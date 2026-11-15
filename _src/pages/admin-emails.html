@@ -1,8 +1,20 @@
-<!--title:Automatic emails|nav:admin-emails.html-->
-<div class="page-head"><div><h1>Automatic emails</h1><p>Sent automatically when something happens. Switch any of them on or off.</p></div></div>
-<div class="card"><div class="setting"><div><b>Booking confirmation</b><p>To customer, when a booking is made</p></div><label class="toggle"><input type="checkbox" checked><i></i></label></div>
-<div class="setting"><div><b>Payment confirmation</b><p>To customer, when a payment is received</p></div><label class="toggle"><input type="checkbox" checked><i></i></label></div>
-<div class="setting"><div><b>Deposit / balance reminder</b><p>To customer, 7 days before the balance is due</p></div><label class="toggle"><input type="checkbox" checked><i></i></label></div>
-<div class="setting"><div><b>Arrival information</b><p>To customer, 3 days before arrival, with check-in details</p></div><label class="toggle"><input type="checkbox" checked><i></i></label></div>
-<div class="setting"><div><b>New booking or change</b><p>To owner and administrator</p></div><label class="toggle"><input type="checkbox" checked><i></i></label></div></div>
-<div class="card flat mt"><div class="card-head"><h3>Recently sent</h3></div><table><thead><tr><th>Sent</th><th>To</th><th>Email</th><th>Status</th></tr></thead><tbody><tr><td>14 Nov 10:42</td><td>emma.carter@…</td><td>Booking confirmation</td><td><span class="badge b-ok">Delivered</span></td></tr><tr><td>14 Nov 10:42</td><td>david@example.com</td><td>New booking</td><td><span class="badge b-ok">Delivered</span></td></tr></tbody></table></div>
+<!--title:Emails|nav:admin-emails.html-->
+<div class="page-head"><div><h1>Emails, reminders &amp; notifications</h1><p>Switch emails on or off and set reminder timing and wording.</p></div></div>
+<div class="grid g2" style="align-items:start">
+<div class="card"><h3>Payment reminders</h3>
+<div class="setting"><div><b>Six-week pre-arrival reminder</b><p>Sent automatically only if a balance is outstanding</p></div><label class="toggle"><input type="checkbox" checked><i></i></label></div>
+<div class="setting"><div><b>Send how long before arrival</b></div><select style="width:auto"><option>6 weeks</option><option>4 weeks</option></select></div>
+<div class="setting"><div><b>Manual overdue reminder</b><p>Button for administrators and self-managed owners</p></div><label class="toggle"><input type="checkbox" checked><i></i></label></div>
+<div class="field mt"><label>Reminder wording</label><textarea>Hi {{guest_name}}, {{amount}} is outstanding for {{property}} ({{arrival}}). Pay securely: {{payment_link}}</textarea></div><a class="btn btn-sm" href="admin-emails.html">Save</a></div>
+<div class="card"><h3>Customers</h3>
+<div class="setting"><div><b>Booking received / booking confirmation</b></div><label class="toggle"><input type="checkbox" checked><i></i></label></div>
+<div class="setting"><div><b>Request accepted or declined</b></div><label class="toggle"><input type="checkbox" checked><i></i></label></div>
+<div class="setting"><div><b>Payment received</b></div><label class="toggle"><input type="checkbox" checked><i></i></label></div>
+<div class="setting"><div><b>Pre-arrival information</b><p>Separate from the payment reminder</p></div><label class="toggle"><input type="checkbox" checked><i></i></label></div>
+<div class="setting"><div><b>Booking update or cancellation</b></div><label class="toggle"><input type="checkbox" checked><i></i></label></div></div>
+<div class="card"><h3>Owners &amp; administrators</h3>
+<div class="setting"><div><b>New listing submitted</b><p>To administrator</p></div><label class="toggle"><input type="checkbox" checked><i></i></label></div>
+<div class="setting"><div><b>Listing approved / rejected</b><p>To owner</p></div><label class="toggle"><input type="checkbox" checked><i></i></label></div>
+<div class="setting"><div><b>£99 listing fee request &amp; confirmation</b></div><label class="toggle"><input type="checkbox" checked><i></i></label></div>
+<div class="setting"><div><b>New booking request</b><p>To self-managed owner</p></div><label class="toggle"><input type="checkbox" checked><i></i></label></div>
+<div class="setting"><div><b>Request expires after</b><p>If a self-managed owner doesn’t reply</p></div><select style="width:auto"><option>24 hours</option><option>48 hours</option></select></div></div></div>

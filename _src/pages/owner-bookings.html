@@ -1,7 +1,14 @@
-<!--title:Owner bookings|nav:owner-bookings.html-->
-<div class="page-head"><div><h1>Bookings</h1><p>Details needed to prepare the caravan. Guest contact details are hidden for privacy.</p></div></div>
-<div class="card flat"><table><thead><tr><th>Ref</th><th>Caravan</th><th>Arrive</th><th>Depart</th><th>Guests</th><th>Pets</th><th>Status</th><th>Notes</th></tr></thead><tbody>
-<tr><td><b>CE-20481</b></td><td>Seaview Retreat</td><td>22 Nov 3pm</td><td>27 Nov 10am</td><td>4+2</td><td>No</td><td><span class="badge b-ok">Confirmed</span></td><td>Late arrival</td></tr>
-<tr><td><b>CE-20475</b></td><td>Seaview Retreat</td><td>28 Nov</td><td>30 Nov</td><td>2</td><td>No</td><td><span class="badge b-ok">Confirmed</span></td><td>—</td></tr>
-<tr><td><b>CE-20440</b></td><td>Harbour View Deluxe</td><td>5 Dec</td><td>9 Dec</td><td>4</td><td>1</td><td><span class="badge b-ok">Confirmed</span></td><td>Linen pack</td></tr>
-<tr><td><b>CE-20301</b></td><td>Seaview Retreat</td><td>3 Nov</td><td>7 Nov</td><td>5</td><td>No</td><td><span class="badge">Completed</span></td><td>—</td></tr></tbody></table></div>
+<!--title:Bookings & payments|nav:owner-bookings.html-->
+<div class="page-head"><div><h1>Bookings &amp; payments</h1><p>You collect payment from your guests directly. Record payments and send reminders here.</p></div><a class="btn btn-ghost" href="#">⬇ Export</a></div>
+<div class="alert a-ok" id="sent">✅ <span>Reminder sent to Ruth Wilson with your payment instructions.</span></div>
+<div class="tabs"><input type="radio" name="t" id="t1" checked><input type="radio" name="t" id="t2">
+<div class="tablist"><label for="t1">Bookings &amp; payments</label><label for="t2">Arrivals &amp; departures</label></div>
+<div class="panels">
+<div class="panel"><div class="card flat"><div class="tbl-wrap"><table><thead><tr><th>Ref</th><th>Guest</th><th>Contact</th><th>Property</th><th>Dates</th><th class="right">Total</th><th>Payment</th><th></th></tr></thead><tbody>
+<tr><td><b>R-2950</b></td><td>Gareth Davies</td><td>07700 900321<br><span class="tiny muted">gareth@example.com</span></td><td>Woodland Lodge</td><td>24–28 Nov</td><td class="right">£318</td><td><span class="badge b-warn">Part paid</span><div class="tiny muted">£95.40 of £318</div></td><td><a class="btn btn-sm btn-ghost" href="#record">Record payment</a></td></tr>
+<tr><td><b>R-2975</b></td><td>Ruth Wilson</td><td>07700 900987<br><span class="tiny muted">ruth@example.com</span></td><td>Dune Escape</td><td>2–6 Dec</td><td class="right">£312</td><td><span class="badge b-bad">Unpaid</span></td><td><a class="btn btn-sm" href="owner-bookings.html#sent">Send reminder</a></td></tr>
+<tr><td><b>CE-20440</b></td><td>Lucy Hughes</td><td>07700 900654<br><span class="tiny muted">lucy@example.com</span></td><td>Dune Escape</td><td>5–9 Dec</td><td class="right">£312</td><td><span class="badge b-ok">Paid</span></td><td></td></tr></tbody></table></div></div>
+<div class="row mt small muted"><span>Refunds and cancellations for these bookings are handled by you, following your own policy.</span></div></div>
+<div class="panel"><div class="card flat"><table><thead><tr><th>Date</th><th></th><th>Guest</th><th>Property</th></tr></thead><tbody><tr><td>Sun 15 Nov</td><td><span class="badge">Departure</span></td><td>Brown</td><td>Woodland Lodge</td></tr><tr><td>Tue 24 Nov</td><td><span class="badge b-info">Arrival</span></td><td>Davies</td><td>Woodland Lodge</td></tr></tbody></table></div></div>
+</div></div>
+<div class="modal" id="record"><div class="box"><a class="x" href="#">×</a><h3>Record a payment</h3><div class="fgrid mt"><div class="field"><label>Amount (£)</label><input type="number" value="222.60"></div><div class="field"><label>Method</label><select><option>Bank transfer</option><option>Card (my Stripe)</option><option>Cash</option></select></div></div><label class="check"><input type="checkbox" checked>Mark as received and email the guest</label><div class="foot"><a class="btn btn-ghost" href="#">Cancel</a><a class="btn btn-ok" href="owner-bookings.html">Save</a></div></div></div>

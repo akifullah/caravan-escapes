@@ -26,9 +26,9 @@ function month(y, m, ranges, pub, todayDay) {
   }
   return h + `</div></div>`;
 }
-const OWNER_R = [[3, 7, 'bk', 'Smith · 4n'], [10, 13, 'ow', 'Owner use'], [18, 21, 'bk', 'Jones · 3n'], [24, 26, 'pn', 'Pending block'], [28, 30, 'bk', 'Patel · 2n']];
-const ADMIN_R = [[3, 7, 'bk', 'Smith · 4n'], [8, 9, 'mt', 'Maintenance'], [10, 13, 'ow', 'Owner use'], [15, 16, 'ic', 'Airbnb (iCal)'], [18, 21, 'bk', 'Jones · 3n'], [22, 23, 'hd', 'Hold 28:14'], [24, 26, 'pn', 'Pending block'], [28, 30, 'bk', 'Patel · 2n']];
-const LEGEND = `<div class="legend"><span><i style="background:#dcebfc"></i>Booking</span><span><i style="background:#e9defa"></i>Owner block</span><span><i style="background:#fff0c7"></i>Pending approval</span><span><i style="background:#fde0e0"></i>Maintenance</span><span><i style="background:#dff3ea"></i>External iCal</span><span><i style="background:#ffe9b3"></i>Checkout hold</span></div>`;
+const OWNER_R = [[3, 7, 'bk', 'Smith · 4n'], [10, 13, 'ow', 'Owner use'], [18, 21, 'bk', 'Jones · 3n'], [24, 26, 'pn', 'Request: Carter'], [28, 30, 'bk', 'Patel · 2n']];
+const ADMIN_R = [[3, 7, 'bk', 'Smith · 4n'], [8, 9, 'mt', 'Maintenance'], [10, 13, 'ow', 'Owner use'], [15, 16, 'ic', 'Airbnb (iCal)'], [18, 21, 'bk', 'Jones · 3n'], [22, 23, 'hd', 'Hold 28:14'], [24, 26, 'pn', 'Request: Carter'], [28, 30, 'bk', 'Patel · 2n']];
+const LEGEND = `<div class="legend"><span><i style="background:#dcebfc"></i>Booking</span><span><i style="background:#e9defa"></i>Owner block</span><span><i style="background:#fff0c7"></i>Pending request</span><span><i style="background:#fde0e0"></i>Maintenance</span><span><i style="background:#dff3ea"></i>External iCal</span><span><i style="background:#ffe9b3"></i>Checkout hold</span></div>`;
 const PUB_LEGEND = `<div class="legend"><span><i style="background:#eaf6ee"></i>Available</span><span><i style="background:#f1f3f3"></i>Unavailable</span><span><i style="background:var(--brand)"></i>Your stay</span></div>`;
 
 function timeline() {
@@ -55,27 +55,31 @@ function timeline() {
 /* ---------- layouts ---------- */
 const hubLinks = (on) => `<div class="demobar"><b>🎬 CLIENT DEMO</b>
 <a href="index.html" class="${on === 'pub' ? 'on' : ''}">Customer website</a>
-<a href="owner-dashboard.html" class="${on === 'owner' ? 'on' : ''}">Owner portal</a><a href="admin-dashboard.html" class="${on === 'admin' ? 'on' : ''}">Admin panel</a>
-<span class="sp"></span><a href="demo.html">☰ Demo hub / flow map</a></div>`;
+<a href="owner-dashboard.html" class="${on === 'owner' ? 'on' : ''}">Self-managed owner</a><a href="pm-dashboard.html" class="${on === 'pm' ? 'on' : ''}">Platform-managed owner</a><a href="admin-dashboard.html" class="${on === 'admin' ? 'on' : ''}">Admin</a>
+<span class="sp"></span><a href="demo.html">☰ Demo guide</a></div>`;
 
 const pubHead = (nav) => `<header class="pub-head"><div class="container"><a class="logo" href="index.html"><span>🚐</span>Caravan Escapes</a>
 <nav class="pub-nav"><a href="search.html" class="${nav === 'search.html' ? 'on' : ''}">Our caravans</a><a href="index.html#how">How it works</a><a href="index.html#contact">Contact</a></nav>
-<a class="btn btn-ghost btn-sm" href="login.html">Sign in</a><a class="btn btn-accent btn-sm" href="search.html">Book now</a></div></header>`;
+<a class="btn btn-ghost btn-sm" href="login.html">My bookings</a><a class="btn btn-ghost btn-sm" href="owner-login.html">Owner login</a><a class="btn btn-accent btn-sm" href="list-your-holiday-home.html">List your holiday home</a></div></header>`;
 const pubFoot = `<footer class="pub-foot" id="contact"><div class="container"><div class="grid g4"><div><div class="logo" style="color:#fff"><span>🚐</span>Caravan Escapes</div><p class="small" style="margin-top:10px">Hand-picked holiday caravans on the Welsh coast. Book direct, pay securely.</p></div>
 <div><h4>Explore</h4><a href="search.html">All caravans</a><a href="index.html#how">How it works</a></div>
-<div><h4>Guests</h4><a href="search.html">Find a caravan</a><a href="#">Cancellation policy</a></div>
-<div><h4>Owners &amp; Staff</h4><a href="owner-dashboard.html">Owner portal</a><a href="admin-dashboard.html">Admin panel</a><a href="demo.html">Demo hub</a></div></div>
+<div><h4>Guests</h4><a href="search.html">Find a caravan</a><a href="account.html">My account</a><a href="#">Cancellation policy</a></div>
+<div><h4>Owners</h4><a href="list-your-holiday-home.html">List your holiday home</a><a href="owner-login.html">Owner login</a></div></div>
 <div class="copy">© 2026 Caravan Escapes · 📞 01234 567 890 · hello@caravanescapes.example · Demo UI only</div></div></footer>`;
 
 const ADMIN_NAV = [
   ['Overview', [['📊', 'Dashboard', 'admin-dashboard.html']]],
-  ['Caravans', [['🚐', 'Caravans', 'admin-caravans.html'], ['🧑‍💼', 'Owners &amp; staff', 'admin-people.html']]],
-  ['Bookings', [['📅', 'Bookings', 'admin-bookings.html'], ['🗓️', 'Calendar', 'admin-calendar.html'], ['📝', 'Date-block requests', 'admin-requests.html', 2], ['🔄', 'iCal sync', 'admin-ical.html']]],
-  ['Money', [['💷', 'Prices', 'admin-pricing.html'], ['💳', 'Payments', 'admin-payments.html'], ['📈', 'Reports', 'admin-reports.html']]],
-  ['Other', [['✉️', 'Automatic emails', 'admin-emails.html']]],
+  ['Properties', [['🚐', 'All properties', 'admin-caravans.html'], ['📝', 'Listing reviews &amp; fees', 'admin-listings.html', 2]]],
+  ['Bookings', [['📅', 'Bookings', 'admin-bookings.html'], ['🗓️', 'Calendars', 'admin-calendar.html'], ['📨', 'Owner requests', 'admin-requests.html', 2], ['🔄', 'iCal sync', 'admin-ical.html']]],
+  ['Money', [['💳', 'Payments &amp; reminders', 'admin-payments.html'], ['💷', 'Prices', 'admin-pricing.html'], ['📈', 'Reports', 'admin-reports.html']]],
+  ['People', [['🧑‍💼', 'Owners, customers &amp; staff', 'admin-people.html']]],
+  ['Website', [['🖼️', 'Content &amp; settings', 'admin-cms.html'], ['✉️', 'Emails', 'admin-emails.html']]],
 ];
 const OWNER_NAV = [
-  ['My caravans', [['📊', 'Dashboard', 'owner-dashboard.html'], ['🗓️', 'Calendar', 'owner-calendar.html'], ['🔒', 'Block dates', 'owner-block.html'], ['📅', 'Bookings', 'owner-bookings.html']]],
+  ['Self-managed owner', [['📊', 'Dashboard', 'owner-dashboard.html'], ['🚐', 'My properties', 'owner-caravans.html'], ['📝', 'Booking requests', 'owner-requests.html', 2], ['📅', 'Bookings &amp; payments', 'owner-bookings.html'], ['🗓️', 'Calendar', 'owner-calendar.html'], ['💳', 'Payment settings', 'owner-payments.html']]],
+];
+const PM_NAV = [
+  ['Platform-managed owner', [['📊', 'Dashboard', 'pm-dashboard.html'], ['📅', 'Bookings (read-only)', 'pm-bookings.html'], ['🗓️', 'Calendar', 'pm-calendar.html'], ['📨', 'Request a block', 'pm-request.html']]],
 ];
 function sidebar(navDef, nav, role, who) {
   let h = `<aside class="side"><a class="logo" href="index.html"><span>🚐</span>Caravan Escapes</a><div class="role">Signed in as<b>${who}</b>${role}</div>`;
@@ -86,12 +90,12 @@ function sidebar(navDef, nav, role, who) {
   return h + `<h6>Account</h6><a href="login.html"><span>↩️</span>Sign out</a></aside>`;
 }
 function shell(kind, nav, body) {
-  const adm = kind === 'admin';
-  const side = adm ? sidebar(ADMIN_NAV, nav, 'Super Administrator', 'Sarah Mitchell') : sidebar(OWNER_NAV, nav, 'Caravan Owner · 2 caravans', 'David Roberts');
-  const me = adm ? ['SM', 'Sarah Mitchell', 'Super Admin'] : ['DR', 'David Roberts', 'Owner'];
+  const adm = kind === 'admin', pm = kind === 'pm';
+  const side = adm ? sidebar(ADMIN_NAV, nav, 'Super Administrator', 'Sarah Mitchell') : pm ? sidebar(PM_NAV, nav, 'Platform-managed · read-only', 'David Roberts') : sidebar(OWNER_NAV, nav, 'Self-managed · full control', 'Helen Price');
+  const me = adm ? ['SM', 'Sarah Mitchell', 'Administrator'] : pm ? ['DR', 'David Roberts', 'Owner (Type A)'] : ['HP', 'Helen Price', 'Owner (Type B)'];
   return `${hubLinks(kind)}<input type="checkbox" id="navtoggle"><div class="shell">${side}<div class="main">
-<div class="topbar"><label for="navtoggle" class="ico burger">☰</label><div class="search"><input type="text" placeholder="${adm ? 'Search bookings, guests, caravans…' : 'Search your bookings…'}"></div><span class="grow"></span>
-<a class="ico" href="${adm ? 'admin-requests.html' : 'owner-dashboard.html#alerts'}">🔔<i></i></a><div class="me"><span class="avatar">${me[0]}</span><div><b>${me[1]}</b><br><small>${me[2]}</small></div></div></div>
+<div class="topbar"><label for="navtoggle" class="ico burger">☰</label><div class="search"><input type="text" placeholder="Search…"></div><span class="grow"></span>
+<a class="ico" href="${adm ? 'admin-listings.html' : pm ? 'pm-bookings.html' : 'owner-requests.html'}">🔔<i></i></a><div class="me"><span class="avatar">${me[0]}</span><div><b>${me[1]}</b><br><small>${me[2]}</small></div></div></div>
 <div class="content">${body}</div></div></div>`;
 }
 
@@ -110,10 +114,10 @@ for (const f of fs.readdirSync(PAGES).filter(f => f.endsWith('.html'))) {
   let src = fs.readFileSync(path.join(PAGES, f), 'utf8');
   const m = src.match(/^<!--(.*?)-->/s); const meta = {};
   if (m) { m[1].split('|').forEach(p => { const i = p.indexOf(':'); meta[p.slice(0, i).trim()] = p.slice(i + 1).trim(); }); src = src.slice(m[0].length); }
-  const kind = f.startsWith('admin-') ? 'admin' : f.startsWith('owner-') ? 'owner' : (meta.layout || 'pub');
+  const kind = meta.layout || (f.startsWith('admin-') ? 'admin' : f.startsWith('owner-') ? 'owner' : f.startsWith('pm-') ? 'pm' : 'pub');
   const nav = meta.nav || f;
   let body = expand(src), out;
-  if (kind === 'admin' || kind === 'owner') out = shell(kind, nav, body);
+  if (kind === 'admin' || kind === 'owner' || kind === 'pm') out = shell(kind, nav, body);
   else if (kind === 'auth') out = hubLinks('') + body;
   else out = hubLinks(meta.on || 'pub') + pubHead(nav) + body + pubFoot;
   const title = (meta.title || f) + ' · Caravan Escapes';
