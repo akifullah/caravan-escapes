@@ -9,7 +9,7 @@ const PHOTO = { cv1:'1523987355523-c7b5b0dd90a7', cv2:'1518780664697-55e3ad93723
   cvnew2:'1522708323590-d24dbb6b0267', cvnew3:'1540518614846-7eded433c457', cvnew4:'1502672260266-1c1ef2d93688',
   'coast-hero':'1507525428034-b723cf961d3e', 'login-bg':'1470071459604-3b5ec3a7fe05' };
 const img = (seed) => `images/${PHOTO[seed] || PHOTO.cv1}.jpg`;
-const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">`;
+const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">`;
 
 /* ---------- calendar helpers ---------- */
 function month(y, m, ranges, pub, todayDay) {
@@ -58,14 +58,14 @@ const hubLinks = (on) => `<div class="demobar"><b>🎬 CLIENT DEMO</b>
 <a href="owner-dashboard.html" class="${on === 'owner' ? 'on' : ''}">Self-managed owner</a><a href="pm-dashboard.html" class="${on === 'pm' ? 'on' : ''}">Platform-managed owner</a><a href="admin-dashboard.html" class="${on === 'admin' ? 'on' : ''}">Admin</a>
 <span class="sp"></span><a href="demo.html">☰ Demo guide</a></div>`;
 
-const pubHead = (nav) => `<header class="pub-head"><div class="container"><a class="logo" href="index.html"><span>🚐</span>Caravan Escapes</a>
+const pubHead = (nav) => `<div class="tagline-bar">Caravan holidays in <b>Newquay, Cornwall</b> &amp; <b>Towyn, North Wales</b></div><header class="pub-head"><div class="container"><a class="logo" href="index.html"><img src="images/logo.jpg" alt="UKCaravans2Hire"><span><b>UKCaravans<em>2</em>Hire</b><small>Cornwall &amp; North Wales</small></span></a>
 <nav class="pub-nav"><a href="search.html" class="${nav === 'search.html' ? 'on' : ''}">Our caravans</a><a href="index.html#how">How it works</a><a href="index.html#contact">Contact</a></nav>
 <a class="btn btn-ghost btn-sm" href="login.html">My bookings</a><a class="btn btn-ghost btn-sm" href="owner-login.html">Owner login</a><a class="btn btn-accent btn-sm" href="list-your-holiday-home.html">List your holiday home</a></div></header>`;
-const pubFoot = `<footer class="pub-foot" id="contact"><div class="container"><div class="grid g4"><div><div class="logo" style="color:#fff"><span>🚐</span>Caravan Escapes</div><p class="small" style="margin-top:10px">Hand-picked holiday caravans on the Welsh coast. Book direct, pay securely.</p></div>
+const pubFoot = `<footer class="pub-foot" id="contact"><div class="container"><div class="grid g4"><div><div class="logo" style="color:#fff"><img src="images/logo.jpg" alt="UKCaravans2Hire"><span><b>UKCaravans<em>2</em>Hire</b><small>Cornwall &amp; North Wales</small></span></div><p class="small" style="margin-top:10px">Caravan holidays in Newquay, Cornwall and Towyn, North Wales. Book direct, pay securely.</p></div>
 <div><h4>Explore</h4><a href="search.html">All caravans</a><a href="index.html#how">How it works</a></div>
 <div><h4>Guests</h4><a href="search.html">Find a caravan</a><a href="account.html">My account</a><a href="#">Cancellation policy</a></div>
 <div><h4>Owners</h4><a href="list-your-holiday-home.html">List your holiday home</a><a href="owner-login.html">Owner login</a></div></div>
-<div class="copy">© 2026 Caravan Escapes · 📞 01234 567 890 · hello@caravanescapes.example · Demo UI only</div></div></footer>`;
+<div class="copy">© 2026 UKCaravans2Hire · 📞 info@ukcaravans2hire.co.uk · Demo UI only</div></div></footer>`;
 
 const ADMIN_NAV = [
   ['Overview', [['📊', 'Dashboard', 'admin-dashboard.html']]],
@@ -82,7 +82,7 @@ const PM_NAV = [
   ['Platform-managed owner', [['📊', 'Dashboard', 'pm-dashboard.html'], ['📅', 'Bookings (read-only)', 'pm-bookings.html'], ['🗓️', 'Calendar', 'pm-calendar.html'], ['📨', 'Request a block', 'pm-request.html']]],
 ];
 function sidebar(navDef, nav, role, who) {
-  let h = `<aside class="side"><a class="logo" href="index.html"><span>🚐</span>Caravan Escapes</a><div class="role">Signed in as<b>${who}</b>${role}</div>`;
+  let h = `<aside class="side"><a class="logo" href="index.html"><img src="images/logo.jpg" alt="UKCaravans2Hire"><span><b>UKCaravans<em>2</em>Hire</b><small>Cornwall &amp; North Wales</small></span></a><div class="role">Signed in as<b>${who}</b>${role}</div>`;
   for (const [g, items] of navDef) {
     h += `<h6>${g}</h6>`;
     for (const [ic, l, href, c] of items) h += `<a href="${href}" class="${href === nav ? 'on' : ''}"><span>${ic}</span>${l}${c ? `<span class="cnt">${c}</span>` : ''}</a>`;
@@ -120,7 +120,7 @@ for (const f of fs.readdirSync(PAGES).filter(f => f.endsWith('.html'))) {
   if (kind === 'admin' || kind === 'owner' || kind === 'pm') out = shell(kind, nav, body);
   else if (kind === 'auth') out = hubLinks('') + body;
   else out = hubLinks(meta.on || 'pub') + pubHead(nav) + body + pubFoot;
-  const title = (meta.title || f) + ' · Caravan Escapes';
+  const title = (meta.title || f) + ' · UKCaravans2Hire';
   fs.writeFileSync(path.join(ROOT, f), `<!DOCTYPE html>\n<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title}</title>${FONTS}<link rel="stylesheet" href="css/style.css"></head><body>\n${sprite}${iconize(out)}\n</body></html>\n`);
   count++;
 }
